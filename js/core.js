@@ -19,11 +19,6 @@ let mode = new Date().getHours() < 15 ? "m" : "e",
     day: today,
     hist: {},
     h0: null,
-    log: {},
-    t0: null,
-    lb: 0,
-    hs: 0,
-    rm: { m: { on: 0, t: "06:00" }, e: { on: 0, t: "17:30" }, q: { on: 0, t: "20:00" }, quiet: 0 },
   },
   cur = 0;
 try {
@@ -35,9 +30,6 @@ if (st.day !== today) {
 }
 if (st.h0 == null) st.h0 = dn0(new Date());
 const save = () => {
-  try {
-    typeof Stats !== "undefined" && Stats.sync();
-  } catch (e) {}
   try {
     localStorage.setItem("azkar5", JSON.stringify(st));
   } catch (e) {}

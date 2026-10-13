@@ -347,24 +347,6 @@ h1 {
   color: var(--mute);
   font-size: 13px;
 }
-.stk {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  background: color-mix(in srgb, var(--gold) 15%, transparent);
-  color: var(--gold2);
-  border: 1px solid color-mix(in srgb, var(--gold) 30%, transparent);
-  border-radius: 99px;
-  padding: 5px 11px;
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-.stk svg {
-  width: 14px;
-  height: 14px;
-  fill: #f0a43a;
-}
 
 /* ============ bar ============ */
 .bar {
@@ -382,31 +364,6 @@ h1 {
   display: flex;
   gap: 8px;
   align-items: center;
-}
-.tabs {
-  flex: 1;
-  min-width: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 4px;
-  background: var(--acc2);
-  border: 1px solid var(--line);
-  padding: 4px;
-  border-radius: 17px;
-}
-.tabs button {
-  min-width: 0;
-  padding: 0 2px;
-  white-space: nowrap;
-  min-height: 42px;
-  border-radius: 13px;
-  color: var(--accd);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: 0.25s;
 }
 @media (max-width: 380px) {
   .tabs button {
@@ -429,12 +386,6 @@ h1 {
   .row1 {
     gap: 6px;
   }
-}
-.tabs button.on {
-  background: var(--btn);
-  color: var(--bi);
-  font-weight: 700;
-  box-shadow: 0 5px 12px -5px color-mix(in srgb, var(--btn) 75%, transparent);
 }
 .ib {
   width: 44px;
@@ -1268,4 +1219,118 @@ body:not(.q) #Q {
   border: 1px solid var(--line);
   background: var(--card);
   color: var(--ink);
+}
+
+/* ============ عام ============ */
+[hidden] {
+  display: none !important;
+}
+.wide:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+@media (max-width: 400px) {
+  .tabs button svg {
+    display: none;
+  }
+  .ib {
+    width: 40px;
+    height: 40px;
+  }
+  .row1 {
+    gap: 6px;
+  }
+}
+
+/* ============ شريط التبويبات (الصباح / المساء / القرآن) ============ */
+.tabs {
+  --t1: #f4c24a;
+  --t2: #e08a1e;
+  --tx: #3a2504;
+  --glow: #e08a1e;
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+  padding: 4px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--card) 70%, var(--acc2));
+  border: 1px solid var(--line);
+  box-shadow:
+    inset 0 2px 5px -2px #4a3a1030,
+    0 8px 20px -14px #4a3a1055;
+}
+.tabs button {
+  position: relative;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 4px;
+  border-radius: 16px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-weight: 500;
+  color: var(--mute);
+  background: transparent;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    box-shadow 0.3s,
+    transform 0.15s;
+}
+.tabs button:active {
+  transform: scale(0.95);
+}
+.tabs button svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+/* ألوان كل تبويب */
+#bm { --t1: #f6c850; --t2: #e58f1f; --tx: #3b2605; --glow: #e58f1f; }
+#be { --t1: #5563c9; --t2: #29337f; --tx: #fff; --glow: #3a47a8; }
+#bq { --t1: #2f9b7e; --t2: #134e3f; --tx: #fff; --glow: #1f7a63; }
+.tabs button:not(.on) svg {
+  color: var(--t2);
+  opacity: 0.85;
+}
+.tabs button.on {
+  color: var(--tx);
+  font-weight: 700;
+  background: linear-gradient(145deg, var(--t1), var(--t2));
+  box-shadow:
+    0 8px 16px -8px color-mix(in srgb, var(--glow) 85%, transparent),
+    inset 0 1px 0 #ffffff55;
+}
+.tabs button.on svg {
+  transform: scale(1.12) rotate(-8deg);
+  filter: drop-shadow(0 1px 1px #0003);
+}
+:root[data-theme="dark"] .tabs {
+  box-shadow:
+    inset 0 2px 6px -2px #000a,
+    0 8px 20px -14px #000c;
+}
+:root[data-theme="dark"] #bm { --t1: #f3d788; --t2: #d9a23f; --tx: #2a1a02; --glow: #d9a23f; }
+:root[data-theme="dark"] #be { --t1: #bcc4ff; --t2: #7f8bea; --tx: #0a0d26; --glow: #8e9bf7; }
+:root[data-theme="dark"] #bq { --t1: #7fe0c0; --t2: #3fae8e; --tx: #06130f; --glow: #4fc3a1; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .tabs {
+    box-shadow:
+      inset 0 2px 6px -2px #000a,
+      0 8px 20px -14px #000c;
+  }
+  :root:not([data-theme="light"]) #bm { --t1: #f3d788; --t2: #d9a23f; --tx: #2a1a02; --glow: #d9a23f; }
+  :root:not([data-theme="light"]) #be { --t1: #bcc4ff; --t2: #7f8bea; --tx: #0a0d26; --glow: #8e9bf7; }
+  :root:not([data-theme="light"]) #bq { --t1: #7fe0c0; --t2: #3fae8e; --tx: #06130f; --glow: #4fc3a1; }
+}
+/* الشاشات الضيقة: الأيقونة تظهر للتبويب النشط فقط */
+@media (max-width: 400px) {
+  .tabs button { gap: 5px; font-size: 14px; }
+  .tabs button:not(.on) svg { display: none; }
+  .tabs button.on svg { display: block; width: 16px; height: 16px; }
 }

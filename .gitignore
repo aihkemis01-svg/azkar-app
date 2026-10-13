@@ -1,9 +1,0 @@
-*.keystore
-*.jks
-*.apk
-*.idsig
-obj/
-dex/
-gen/
-web_single/
-res.zip

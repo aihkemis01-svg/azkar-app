@@ -15,8 +15,5 @@ function openS() {
 <div class="ro"><span>المظهر</span><div class="seg"><button data-th="auto" class="${st.theme == "auto" ? "on" : ""}">تلقائي</button><button data-th="light" class="${st.theme == "light" ? "on" : ""}">نهاري</button><button data-th="dark" class="${st.theme == "dark" ? "on" : ""}">ليلي</button></div></div>
 <label class="ro"><span>إتمام بدون عدّ</span><input type="checkbox" class="sw" id="ncb" ${st.nc ? "checked" : ""}></label>
 <label class="ro"><span>إخفاء الأذكار المنجزة</span><input type="checkbox" class="sw" id="hdb" ${st.hide ? "checked" : ""}></label>
-<label class="ro"><span>إخفاء سلسلة الأيام</span><input type="checkbox" class="sw" id="hsb" ${st.hs ? "checked" : ""}></label>
-${Reminders.html()}
-<button class="wide" id="sxo">📊 إحصائيات الإنجاز</button><button class="wide" id="hl">أحاديثي السابقة</button><button class="wide" id="nx">تجربة: الانتقال ليوم جديد</button><button class="wide" id="rs">إعادة العدّ من البداية</button><button class="wide dk" data-x>تم</button>`);
-  Reminders.afterOpen();
+<button class="wide" id="hl">أحاديثي السابقة</button><button class="wide dk" data-x>تم</button>`);
 }

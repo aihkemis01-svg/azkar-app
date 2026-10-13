@@ -22,7 +22,6 @@ function head() {
 function render() {
   document.documentElement.style.setProperty("--fs", st.fs + "px");
   document.body.dataset.m = mode;
-  document.body.classList.toggle("hs", !!st.hs);
   $("bm").className = mode == "m" && !QV ? "on" : "";
   $("be").className = mode == "e" && !QV ? "on" : "";
   $("bq").className = QV ? "on" : "";

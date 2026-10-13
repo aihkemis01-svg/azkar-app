@@ -54,22 +54,6 @@ $("ov").addEventListener("click", (e) => {
     openS();
   }
   if (t.id == "hl") openL();
-  if (t.id == "nx") {
-    st.h0--;
-    delete st.hist[today];
-    st.S = { m: {}, e: {} };
-    save();
-    shut();
-    render();
-    scrollTo({ top: 0 });
-  }
-  if (t.id == "rs" && confirm("هل تريد إعادة العدّ من البداية؟")) {
-    st.S[mode] = {};
-    save();
-    shut();
-    render();
-    scrollTo({ top: 0 });
-  }
   if (t.id == "cp") copy(htx(cur), t);
   if (t.id == "shr") {
     if (navigator.share) navigator.share({ text: htx(cur) }).catch(() => {});

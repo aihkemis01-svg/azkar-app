@@ -76,7 +76,6 @@ function qrender() {
   $("pc").textContent = Math.round(pr * 100) + "%";
   $("rg").style.strokeDashoffset = 138.2 * (1 - pr);
   $("pg").style.width = pr * 100 + "%";
-  $("stk").textContent = stxt(sk(st.qh));
 }
 $("Q").addEventListener("click", (e) => {
   const c = e.target.closest(".qp");

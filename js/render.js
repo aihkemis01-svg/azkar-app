@@ -65,7 +65,6 @@ function prog() {
   $("ttl").textContent = mode == "m" ? "أذكار الصباح" : "أذكار المساء";
   $("sb").textContent = `أُنجز ${it} من ${D.length} ذكرًا`;
   $("sb2").textContent = it == D.length ? "ما شاء الله، أتممتها 🤍" : "اضغط على البطاقة لتبدأ";
-  $("stk").textContent = stxt(streak());
   $("hint").textContent = st.nc ? "اضغط على البطاقة لإتمام الذكر" : "اضغط على البطاقة لإنقاص العدّ";
   $("ch").innerHTML = G.map((g, gi) => {
     let n = 0,
