@@ -1332,3 +1332,62 @@ body:not(.q) #Q {
   .tabs button:not(.on) svg { display: none; }
   .tabs button.on svg { display: block; width: 16px; height: 16px; }
 }
+
+/* ===== إعدادات الورد القرآني ===== */
+.qcfg {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  margin-bottom: 8px;
+}
+.qsel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.qsel small {
+  color: var(--mute);
+  font-size: 12px;
+}
+.qsel select,
+.ro input[type="number"] {
+  width: 100%;
+  min-height: 46px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--gold) 28%, var(--line));
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  box-shadow: var(--sh);
+}
+.ro input[type="number"] {
+  width: 110px;
+  text-align: center;
+  box-shadow: none;
+}
+.qchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+.qchips button {
+  padding: 7px 16px;
+  border-radius: 99px;
+  border: 1.5px solid var(--acc);
+  background: transparent;
+  color: var(--accd);
+  font-size: 14px;
+}
+.qchips button.on {
+  background: var(--acc);
+  color: var(--on);
+}
+.qp.off {
+  opacity: 0.45;
+  cursor: default;
+}

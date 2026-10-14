@@ -69,11 +69,11 @@ $("ov").addEventListener("input", (e) => {
 });
 $("ov").addEventListener("change", (e) => {
   if (e.target.id == "qj") {
-    st.q.j = +e.target.value;
-    st.q.d = [0, 0, 0, 0, 0];
-    st.q.done = null;
-    save();
-    if (QV) qrender();
+    const j = +e.target.value;
+    qask(() => {
+      shut();
+      qSetPos(JP[j - 1]);
+    });
   }
   if (e.target.id == "ncb") {
     st.nc = +e.target.checked;
