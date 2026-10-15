@@ -1333,61 +1333,114 @@ body:not(.q) #Q {
   .tabs button.on svg { display: block; width: 16px; height: 16px; }
 }
 
-/* ===== إعدادات الورد القرآني ===== */
-.qcfg {
-  display: flex;
-  gap: 10px;
-  align-items: flex-end;
-  margin-bottom: 8px;
-}
-.qsel {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.qsel small {
-  color: var(--mute);
-  font-size: 12px;
-}
-.qsel select,
-.ro input[type="number"] {
-  width: 100%;
-  min-height: 46px;
-  padding: 8px 10px;
-  border-radius: 14px;
-  border: 1px solid color-mix(in srgb, var(--gold) 28%, var(--line));
-  background: var(--card);
-  color: var(--ink);
-  font: inherit;
-  font-size: 16px;
-  box-shadow: var(--sh);
-}
-.ro input[type="number"] {
-  width: 110px;
-  text-align: center;
-  box-shadow: none;
-}
-.qchips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0 0 8px;
-}
-.qchips button {
-  padding: 7px 16px;
-  border-radius: 99px;
-  border: 1.5px solid var(--acc);
-  background: transparent;
-  color: var(--accd);
-  font-size: 14px;
-}
-.qchips button.on {
-  background: var(--acc);
-  color: var(--on);
-}
-.qp.off {
-  opacity: 0.45;
-  cursor: default;
-}
+/* ===== تخصيص الورد ===== */
+.qset{display:block;width:100%;margin-top:10px;min-height:42px;border-radius:13px;background:var(--acc2);border:1px solid var(--line);color:var(--accd);font-weight:700}
+.stp{display:flex;align-items:center;gap:6px}
+.stp button{width:40px;height:40px;border-radius:12px;background:var(--btn);color:var(--bi);font-size:22px;font-weight:700;line-height:1}
+.stp input,.qnum{width:68px;height:40px;text-align:center;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:700;font-size:18px}
+.qnum{width:90px}
+.ro.col{flex-direction:column;align-items:stretch}
+.ro.col>span small{color:var(--mute);font-size:12px}
+.qchips{display:flex;flex-wrap:wrap;gap:8px;padding:10px 0}
+.ro.col .qchips{padding:0}
+.qchips button{padding:9px 14px;border-radius:12px;background:var(--acc2);border:1px solid var(--line);color:var(--accd);font-weight:600;min-height:40px}
+.qchips button.on{background:var(--btn);border-color:var(--btn);color:var(--bi);font-weight:700}
+.qpv{margin:10px 2px 0;padding:10px 12px;border-radius:14px;background:var(--acc2);color:var(--accd);font-size:14px;line-height:1.9;text-align:center}
+.wide:disabled{opacity:.5}
+
+/* ===== صفحة ورد القرآن — التصميم الجديد ===== */
+body.q .hero,body.q .bar{display:none}
+body.q main{padding:0}
+.qpage{padding-bottom:30px}
+.qhero{position:relative;overflow:hidden;text-align:center;padding:24px 16px 58px;background:linear-gradient(180deg,color-mix(in srgb,var(--gold) 16%,var(--bg)),var(--bg))}
+.qsky{position:absolute;inset:0;width:100%;height:100%;color:var(--gold);pointer-events:none}
+.qback{position:absolute;left:14px;top:14px;width:46px;height:46px;border-radius:50%;background:var(--card);box-shadow:var(--sh);color:var(--accd);display:grid;place-items:center;z-index:2}
+.qi{width:22px;height:22px;display:block}
+.qh{position:relative}
+.qh h1{margin:8px 0 2px;font:700 32px/1.35 Amiri,serif;color:var(--accd);display:flex;gap:8px;align-items:center;justify-content:center}
+.qh h1 .qi{width:38px;height:38px;color:var(--gold2)}
+.qh p{margin:0 0 10px;color:var(--mute);font-size:18px}
+.qv{font:400 22px/1.8 "KFGQPC Uthmanic Hafs","Amiri Quran",Amiri,serif;color:var(--accd)}
+.qv small{display:block;font:400 13px Tajawal,sans-serif;color:var(--mute);margin-top:-4px}
+.qcfg{position:relative;z-index:2;margin:-32px 10px 0;padding:10px;border-radius:26px;background:var(--card);border:1px solid var(--line);box-shadow:var(--sh);display:flex;gap:8px;align-items:center}
+.qcell{flex:1;min-width:0;display:flex;align-items:center;gap:6px;min-height:60px;padding:6px 8px;border-radius:18px;background:color-mix(in srgb,var(--acc2) 45%,var(--card));border:1px solid var(--line);text-align:right;color:var(--ink)}
+.qcell .qct{flex:1;min-width:0;display:flex;flex-direction:column}
+.qcell small{font-size:11px;line-height:1.3;color:var(--mute)}
+.qcell b{font-size:15.5px;color:var(--accd);white-space:nowrap}
+.qchev{width:15px;height:15px;color:var(--mute);flex:none}
+.qcic{width:32px;height:32px;border-radius:50%;background:var(--acc2);color:var(--accd);display:grid;place-items:center;flex:none}
+.qcic .qi{width:18px;height:18px}
+.qgear{width:44px;height:44px;border-radius:50%;background:var(--acc2);border:1px solid var(--line);color:var(--accd);display:grid;place-items:center;flex:none}
+.qprog{margin:14px 10px 0;padding:16px 14px;border-radius:26px;background:var(--card);border:1px solid var(--line);box-shadow:var(--sh);display:flex;align-items:center;gap:12px}
+.qring{position:relative;width:68px;height:68px;flex:none}
+.qring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.qring .tr{stroke:var(--line)}
+.qring .fl{stroke:var(--acc);transition:stroke-dashoffset .5s}
+.qring b{position:absolute;inset:0;display:grid;place-items:center;font-size:16px;color:var(--accd)}
+.qpt{flex:1;min-width:0}
+.qpt h2{margin:0;font-size:21px;color:var(--accd)}
+.qpt p{margin:2px 0 8px;color:var(--mute);font-size:14px}
+.qpt small{display:block;margin-top:6px;color:var(--mute);font-size:13px;text-align:end}
+.qbook{width:84px;flex:none}
+.qsec,.qft{display:flex;align-items:center;gap:10px;margin:22px 16px 12px;color:var(--gold)}
+.qsec i,.qft i{flex:1;height:1px;background:var(--line)}
+.qsec h3{margin:0;font-size:20px;color:var(--accd)}
+.qft span{color:var(--mute);font-size:15px}
+.orn{width:14px;height:14px;flex:none}
+.qr{display:flex;align-items:center;gap:9px;margin:0 10px 10px;padding:11px 12px;border-radius:22px;background:var(--card);border:1px solid var(--line);box-shadow:var(--sh);cursor:pointer;transition:opacity .3s}
+.qr.nx{border-color:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 22%,transparent),var(--sh)}
+.qr.done{opacity:.62}
+.qpn{font-size:16.5px;color:var(--accd);flex:none;min-width:40px}
+.qri{width:46px;height:46px;flex:none}
+.qri svg{width:100%;height:100%;display:block}
+.qsep{width:1px;align-self:stretch;margin:4px 0;background:var(--line);flex:none}
+.qrt{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px;text-align:right}
+.qrt b{font-size:15.5px;color:var(--ink)}
+.qrt small{color:var(--mute);font-size:12.5px}
+.qrt em{font-style:normal;font-size:12px;color:var(--gold2)}
+.qgo{display:flex;align-items:center;gap:5px;padding:9px 11px;border-radius:999px;background:var(--acc2);color:var(--accd);font-weight:700;font-size:13.5px;flex:none;white-space:nowrap}
+.qgo .qi{width:17px;height:17px}
+.qmeta{text-align:center;color:var(--mute);font-size:13px;margin:6px 16px 0}
+@media (max-width:420px){.qcell .qchev,.qgo .qchev{display:none}.qpn{min-width:36px;font-size:15px}}
+
+/* ===== صفحة تخصيص الورد ===== */
+.qcp{position:fixed;inset:0;z-index:50;background:var(--bg);overflow:auto;display:none;padding-top:env(safe-area-inset-top,0px)}
+.qcp.on{display:block}
+.qcw{position:relative;max-width:560px;margin:0 auto;padding:14px 14px calc(24px + env(safe-area-inset-bottom,0px))}
+.qcsky{position:absolute;top:0;left:0;width:100%;height:160px;color:var(--gold);pointer-events:none}
+.qch{position:relative;display:flex;align-items:center;gap:6px;margin-bottom:14px}
+.qcbk{width:64px;flex:none}
+.qtt{flex:1;min-width:0;text-align:center}
+.qtr{display:flex;align-items:center;justify-content:center;gap:4px}
+.qtr h2{margin:0;font:700 26px/1.4 Amiri,serif;color:var(--accd)}
+.lf{width:30px;height:30px;flex:none}
+.lf.flip{transform:scaleX(-1)}
+.lf.sm{width:22px;height:22px}
+.qdv{display:flex;align-items:center;gap:6px;color:var(--gold);margin-top:2px}
+.qdv i{flex:1;height:1px;background:color-mix(in srgb,var(--gold) 55%,transparent)}
+.qcb{width:44px;height:44px;border-radius:13px;background:var(--btn);color:var(--bi);display:grid;place-items:center;flex:none;box-shadow:var(--sh)}
+.qcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px;margin-bottom:12px;box-shadow:var(--sh)}
+.qcard.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ql{font-size:17px;font-weight:700;color:var(--ink)}
+.qstp{display:flex;align-items:center;gap:8px}
+.qstp button{width:46px;height:46px;border-radius:14px;background:linear-gradient(180deg,color-mix(in srgb,var(--btn) 82%,#fff),var(--btn));color:var(--bi);font-size:26px;font-weight:700;line-height:1}
+.qstp input,.qnum{width:84px;height:46px;text-align:center;border-radius:14px;border:1px solid var(--line);background:color-mix(in srgb,var(--acc2) 45%,var(--card));color:var(--ink);font:700 20px Tajawal,sans-serif}
+.qqh{display:flex;align-items:center;gap:8px}
+.qqh b{font-size:19px;color:var(--accd)}
+.qqh .qi{color:var(--gold);width:22px;height:22px}
+.qhint{margin:4px 0 12px;color:var(--mute);font-size:13px}
+.qpch{display:flex;flex-wrap:wrap;gap:8px}
+.qpch button{flex:1 1 auto;min-width:74px;display:flex;align-items:center;justify-content:center;gap:6px;min-height:46px;padding:8px 14px;border-radius:16px;background:var(--acc2);border:1px solid var(--line);color:var(--accd);font-weight:700;font-size:15px}
+.qpch button.on{background:linear-gradient(180deg,color-mix(in srgb,var(--btn) 82%,#fff),var(--btn));border-color:var(--btn);color:var(--bi)}
+.qpvc{position:relative;text-align:center;padding:16px 36px 14px;margin-bottom:14px;border-radius:20px;background:color-mix(in srgb,var(--acc2) 65%,var(--card));border:1px solid color-mix(in srgb,var(--acc) 25%,var(--line))}
+.qpvc>b{font-size:16.5px;color:var(--ink)}
+.qpvc p{margin:8px 0 0;color:var(--mute);font-size:14.5px;line-height:2}
+.qpvc .lf.cl,.qpvc .lf.cr{position:absolute;bottom:6px;width:34px;height:34px;opacity:.8}
+.qpvc .lf.cl{left:6px}.qpvc .lf.cr{right:6px}
+.qsv,.qcn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:54px;border-radius:16px;font-weight:700;font-size:18px;margin-top:10px}
+.qsv{background:linear-gradient(180deg,color-mix(in srgb,var(--btn) 82%,#fff),var(--btn));color:var(--bi)}
+.qsv:disabled{opacity:.5}
+.qcn{background:var(--acc2);color:var(--accd);border:1px solid var(--line)}
+.qbt{display:flex;align-items:center;gap:10px;margin:20px 6px 0;color:var(--gold)}
+.qbt i{flex:1;height:1px;background:var(--line)}
+.qbt .orn{width:26px;height:26px}

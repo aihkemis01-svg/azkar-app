@@ -1,7 +1,7 @@
 function openH(f) {
   cur = (st.hist[today] || hIdx() + 1) - 1;
   open(
-    `${f ? "<h3>تقبّل الله طاعتك 🤍</h3>" : ""}<div class="hc"><div class="hd">✨ حديث اليوم</div>${hH(cur)}</div><div class="acts"><button class="wide" id="cp">نسخ</button><button class="wide" id="shr">مشاركة</button></div><div class="ro"><span>ورد القرآن: الجزء الحالي</span><select id="qj">${Array.from({ length: 30 }, (_, i) => `<option value="${i + 1}"${st.q.j == i + 1 ? " selected" : ""}>${i + 1}</option>`).join("")}</select></div><button class="wide" id="hl">أحاديثي السابقة</button><button class="wide dk" data-x>إغلاق</button>`,
+    `${f ? "<h3>تقبّل الله طاعتك 🤍</h3>" : ""}<div class="hc"><div class="hd">✨ حديث اليوم</div>${hH(cur)}</div><div class="acts"><button class="wide" id="cp">نسخ</button><button class="wide" id="shr">مشاركة</button></div><div class="ro"><span>ورد القرآن: البدء من جزء</span><select id="qj">${Array.from({ length: 30 }, (_, i) => `<option value="${i + 1}"${st.q.j == i + 1 ? " selected" : ""}>${i + 1}</option>`).join("")}</select></div><button class="wide" id="hl">أحاديثي السابقة</button><button class="wide dk" data-x>إغلاق</button>`,
   );
 }
 function openL() {
